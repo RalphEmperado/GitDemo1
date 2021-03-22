@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+    });
+    </script>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper blue-grey darken-3">
+      <a href="/" class="nav blue-grey darken-3">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="others">Others</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/">Home</a></li>
+    <li><a href="others">Others</a></li>
+  </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col s4 m8" style="margin: 25px 0px 0px 20%;">
+        <center>
+        <img src="location.png" style="max-width: 25%;">
+        <h3><%= weather[0]['location']['name']%></h3>
+        <h3><%= weather[0]['location']['lat'] %>° N, <%= weather[0]['location']['long'] %>° E</h3>
+
+        <div class="row">
+          <% for(forecast of weather[0]['forecast']){ %>
+            <div class="col">
+              <img src="<%= forecast['skytextday']%>.png" width="50">
+              <h5><%= forecast['skytextday'] %></h5>
+              <h5><%= forecast['day'] %></h5>
+              <h5><%= forecast['date'] %></h5>
+              <h5>Low <%= forecast['low'] %>°</h5>
+              <h5>High <%= forecast['high'] %>°</h5>
+              </div>
+         <% } %>
+          </div>
+          <center>
+
+      </div>
+    </div>
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
