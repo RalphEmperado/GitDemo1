@@ -1,0 +1,18 @@
+{
+  "name": "summative",
+  "version": "1.0.0",
+  "description": "summative",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ralph Emperado",
+  "license": "ISC"
+}
